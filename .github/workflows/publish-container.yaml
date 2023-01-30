@@ -51,7 +51,7 @@ jobs:
         images: ghcr.io/${{ env.REPO }}
 
     - name: Build and push Docker image
-      uses: docker/build-push-action@v3
+      uses: docker/build-push-action@v4
       with:
         context: .
         push: true
@@ -63,7 +63,7 @@ jobs:
 
     - name: Build and push integration tests docker image
       if: inputs.integrationTestsContainer
-      uses: docker/build-push-action@v3
+      uses: docker/build-push-action@v4
       with:
         context: .
         file: ./jest.integration.Dockerfile
